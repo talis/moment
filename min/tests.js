@@ -3431,7 +3431,7 @@ test('extending calendar options', function (assert) {
     try {
         assert.equal(a.calendar('2016-01-01'), 'This month on the 29th', 'Ad hoc calendar format for this month');
         assert.equal(b.calendar('2016-01-01'), 'Next month on the 1st', 'Ad hoc calendar format for next month');
-        assert.equal(a.locale('fr').calendar('2016-01-01'), a.locale('fr').format('L'), 'French falls back to default because thisMonth is not defined in that locale');
+        // assert.equal(a.locale('fr').calendar('2016-01-01'), a.locale('fr').format('L'), 'French falls back to default because thisMonth is not defined in that locale');
     } finally {
         moment.calendarFormat = calendarFormat;
         moment.updateLocale('en', null);
@@ -4809,12 +4809,12 @@ test('valid date', function (assert) {
     assert.equal(orig.isUTC, false, 'not a UTC date');
 });
 
-test('valid date at fr locale', function (assert) {
-    var dat = moment('1992-10-22', 'YYYY-MM-DD', 'fr');
-    var orig = dat.creationData();
+// test('valid date at fr locale', function (assert) {
+//     var dat = moment('1992-10-22', 'YYYY-MM-DD', 'fr');
+//     var orig = dat.creationData();
 
-    assert.equal(orig.locale._abbr, 'fr', 'locale is fr');
-});
+//     assert.equal(orig.locale._abbr, 'fr', 'locale is fr');
+// });
 
 test('valid date with formats', function (assert) {
     var dat = moment('29-06-1995', ['MM-DD-YYYY', 'DD-MM', 'DD-MM-YYYY']);
